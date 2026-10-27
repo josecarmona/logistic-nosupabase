@@ -1,0 +1,29 @@
+name: 🚀 Deploy Logistic App
+
+on:
+  push:
+    branches:
+      - develop
+      - app
+      - qa
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔑 SSH Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /data/projects/logistic
+            git checkout -- package-lock.json deploy.sh 2>/dev/null || true
+            CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+            git reset --hard "origin/$CURRENT_BRANCH"
+            chmod +x ./deploy.sh
+            bash ./deploy.sh
