@@ -132,8 +132,8 @@ cd logistic
 Crear el archivo `.env` en la raíz del proyecto para desarrollo local:
 ```env
 PUBLIC_SUPABASE_URL=https://vgwyblazkfdsrrlbwhof.supabase.co
-PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnd3libGF6a2Zkc3JybGJ3aG9mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0ODYyOTAsImV4cCI6MjEwNzA2MjI5MH0.buKAwstmYELP7Sv5yPUK7SUXmcQFx5Twpl2EJL_OFXs
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnd3libGF6a2Zkc3JybGJ3aG9mIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MTQ4NjI5MCwiZXhwIjoyMTA3MDYyMjkwfQ.8-G5qKGm_hYfYlnTSlpYb7z-2x3Wh8ZQdGlnyxG75fo
+PUBLIC_SUPABASE_ANON_KEY=<value>
+SUPABASE_SERVICE_ROLE_KEY=<value>
 
 SESSION_REFRESH_INTERVAL=3600
 GEOCODING_API_URL=https://nominatim.openstreetmap.org
@@ -159,3 +159,8 @@ Acceder a [http://localhost:5173](http://localhost:5173).
 1. **Soft Delete**: Nunca eliminar filas físicamente (`DELETE`). Usar `activo = false` o `status = 'inactivo'`.
 2. **Textos descriptivos en mayúsculas**: Los campos como `descripcion`, nombres o títulos se almacenan y muestran en `.toUpperCase()`.
 3. **Validaciones defensivas**: Si una columna o tabla nueva de Supabase aún no está presente en la base de datos remota, el backend debe capturar errores `42703` (undefined column) o `42P01` (undefined table) y usar fallbacks para no interrumpir el flujo del usuario.
+
+##
+## eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnd3libGF6a2Zkc3JybGJ3aG9mIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MTQ4NjI5MCwiZXhwIjoyMTA3MDYyMjkwfQ.8-G5qKGm_hYfYlnTSlpYb7z-2x3Wh8ZQdGlnyxG75fo
+## eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnd3libGF6a2Zkc3JybGJ3aG9mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0ODYyOTAsImV4cCI6MjEwNzA2MjI5MH0.buKAwstmYELP7Sv5yPUK7SUXmcQFx5Twpl2EJL_OFXs
+##
